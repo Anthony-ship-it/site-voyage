@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Voyage autour du monde</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background-color: #f4f4f4; }
+    h1 { color: #2c3e50; font-size: 2em; }
+    .lang-toggle { margin-bottom: 20px; padding: 10px 20px; cursor: pointer; background-color: #3498db; color: white; border: none; border-radius: 5px; }
+    .content { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin-bottom: 20px; }
+    img { width: 100%; height: auto; border-radius: 10px; margin-top: 20px; }
+    .btn-reserver {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: #27ae60;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <button class="lang-toggle" id="lang-toggle">English</button>
+
+  <div class="content">
+    <h1 id="title">Votre aventure commence ici</h1>
+    <p id="desc">Partez à la découverte de lieux incroyables, vivez des expériences uniques et créez des souvenirs inoubliables aux quatre coins du monde.</p>
+
+    <img src="https://images.pexels.com/photos/723240/pexels-photo-723240.jpeg" alt="Avion décollant de l'aéroport">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Plage ensoleillée parfaite pour les vacances">
+
+    <a href="#" class="btn-reserver">Réserver maintenant</a>
+  </div>
+
+  <script>
+    const langToggle = document.getElementById('lang-toggle');
+    const title = document.getElementById('title');
+    const desc = document.getElementById('desc');
+    let isFrench = true;
+
+    langToggle.addEventListener('click', () => {
+      if (isFrench) {
+        title.textContent = "Your adventure starts here";
+        desc.textContent = "Set out to discover breathtaking places, enjoy unique experiences, and create unforgettable memories around the world.";
+        langToggle.textContent = "Français";
+        isFrench = false;
+      } else {
+        title.textContent = "Votre aventure commence ici";
+        desc.textContent = "Partez à la découverte de lieux incroyables, vivez des expériences uniques et créez des souvenirs inoubliables aux quatre coins du monde.";
+        langToggle.textContent = "English";
+        isFrench = true;
+      }
+    });
+  </script>
+</body>
+</html>
